@@ -1,0 +1,12 @@
+.about { padding: 6rem 2rem; background: var(--off-white); }
+.about__inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.about__body { color: var(--muted); line-height: 1.8; margin: 1.5rem 0 2rem; font-size: 1.05rem; }
+.about__stats { display: flex; gap: 2rem; }
+.about__stat span { display: block; font-size: 2rem; font-weight: 800; color: var(--orange); font-family: var(--font-display); }
+.about__stat label { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+.about__visual { display: flex; justify-content: center; }
+.about__card { background: var(--navy); color: white; padding: 3rem 2.5rem; border-radius: 12px; text-align: center; box-shadow: 0 20px 60px rgba(13,31,60,0.2); }
+.about__card-logo { font-family: var(--font-display); font-size: 3rem; font-weight: 900; letter-spacing: 0.05em; }
+.about__card-logo span { color: var(--orange); }
+.about__card-tagline { color: rgba(255,255,255,0.6); margin-top: 0.5rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.15em; }
+@media (max-width: 768px) { .about__inner { grid-template-columns: 1fr; } .about__stats { gap: 1.5rem; } }

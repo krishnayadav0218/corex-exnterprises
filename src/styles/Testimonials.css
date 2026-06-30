@@ -1,0 +1,11 @@
+.testimonials { background: var(--navy); padding: 6rem 2rem; }
+.testimonials__inner { max-width: 800px; margin: 0 auto; text-align: center; }
+.testimonials__header { margin-bottom: 3rem; }
+.testi-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 3rem; margin-bottom: 2rem; }
+.testi-stars { color: var(--orange); font-size: 1.4rem; letter-spacing: 0.1em; margin-bottom: 1.5rem; }
+.testi-text { color: rgba(255,255,255,0.85); font-size: 1.1rem; line-height: 1.8; font-style: italic; margin-bottom: 2rem; }
+.testi-author strong { display: block; color: white; font-size: 1rem; font-weight: 700; }
+.testi-author span { color: var(--orange); font-size: 0.85rem; }
+.testi-dots { display: flex; justify-content: center; gap: 0.75rem; }
+.testi-dot { width: 10px; height: 10px; border-radius: 50%; border: none; background: rgba(255,255,255,0.3); cursor: pointer; transition: background 0.3s; }
+.testi-dot.active { background: var(--orange); }
