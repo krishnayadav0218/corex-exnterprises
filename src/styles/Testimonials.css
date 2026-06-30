@@ -1,0 +1,124 @@
+.testimonials { background: var(--navy); padding: 6rem 2rem; position: relative; overflow: hidden; }
+.testimonials__inner { max-width: 800px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+.testimonials__header { margin-bottom: 3rem; }
+
+.testi-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.testi-card-wrap {
+  flex: 1;
+  position: relative;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.testi-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 3rem;
+  width: 100%;
+  position: relative;
+}
+
+.testi-card--next { animation: testiSlideInRight 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
+.testi-card--prev { animation: testiSlideInLeft 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
+
+@keyframes testiSlideInRight {
+  from { opacity: 0; transform: translateX(40px) scale(0.97); }
+  to   { opacity: 1; transform: translateX(0) scale(1); }
+}
+@keyframes testiSlideInLeft {
+  from { opacity: 0; transform: translateX(-40px) scale(0.97); }
+  to   { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+.testi-quote-mark {
+  position: absolute;
+  top: 0.5rem;
+  left: 1.5rem;
+  font-family: Georgia, serif;
+  font-size: 5rem;
+  color: var(--orange);
+  opacity: 0.18;
+  line-height: 1;
+  user-select: none;
+}
+
+.testi-stars {
+  color: var(--orange);
+  font-size: 1.4rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  animation: testiStarPop 0.5s ease 0.15s both;
+}
+@keyframes testiStarPop {
+  from { opacity: 0; transform: scale(0.7); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.testi-text {
+  color: rgba(255,255,255,0.85);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.testi-author { display: flex; align-items: center; justify-content: center; gap: 0.85rem; }
+.testi-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--orange); color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-family: var(--font-display); font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.testi-author > div:last-child { text-align: left; }
+.testi-author strong { display: block; color: white; font-size: 1rem; font-weight: 700; }
+.testi-author span { color: var(--orange); font-size: 0.85rem; }
+
+.testi-arrow {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: white;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.25s, transform 0.25s, border-color 0.25s;
+}
+.testi-arrow:hover { background: var(--orange); border-color: var(--orange); transform: scale(1.08); }
+
+.testi-dots { display: flex; justify-content: center; gap: 0.6rem; }
+.testi-dot {
+  width: 28px; height: 6px; border-radius: 3px;
+  border: none; background: rgba(255,255,255,0.2);
+  cursor: pointer; position: relative; overflow: hidden;
+  transition: background 0.3s;
+}
+.testi-dot.active { background: rgba(255,255,255,0.2); }
+.testi-dot__progress {
+  position: absolute; top: 0; left: 0; height: 100%;
+  background: var(--orange); width: 0%;
+  animation: testiProgress 5s linear;
+}
+@keyframes testiProgress { from { width: 0%; } to { width: 100%; } }
+
+@media (max-width: 640px) {
+  .testi-stage { gap: 0.5rem; }
+  .testi-arrow { width: 36px; height: 36px; font-size: 1.2rem; }
+  .testi-card { padding: 2.5rem 1.5rem; }
+  .testi-card-wrap { min-height: 360px; }
+}
