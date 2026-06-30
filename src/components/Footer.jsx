@@ -1,0 +1,57 @@
+import React from 'react';
+import '../styles/Footer.css';
+import { useSiteData } from '../context/SiteDataContext';
+import useSectionStyle from './useSectionStyle';
+
+export default function Footer() {
+  const sectionStyle = useSectionStyle('footer');
+  const { data } = useSiteData();
+  const c = data.contact;
+  const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+
+  return (
+    <footer className="footer sec-styled" style={sectionStyle}>
+      <div className="footer__inner">
+        <div>
+          <div className="footer__brand-name">CORE<span>X</span></div>
+          <div className="footer__tagline">Supplying the Core of Industry</div>
+          <p className="footer__desc">Trusted supplier of electrical materials, cables, cable management systems, metals and industrial raw materials across India.</p>
+        </div>
+        <div>
+          <div className="footer__col-title">Quick Links</div>
+          <ul className="footer__links">
+            <li><a href="#hero" onClick={(e)=>{e.preventDefault();scrollTo('hero');}}>Home</a></li>
+            <li><a href="#about" onClick={(e)=>{e.preventDefault();scrollTo('about');}}>About Us</a></li>
+            <li><a href="#products" onClick={(e)=>{e.preventDefault();scrollTo('products');}}>Products</a></li>
+            <li><a href="#why" onClick={(e)=>{e.preventDefault();scrollTo('why');}}>Why CoreX</a></li>
+            <li><a href="#testimonials" onClick={(e)=>{e.preventDefault();scrollTo('testimonials');}}>Testimonials</a></li>
+            <li><a href="#blog" onClick={(e)=>{e.preventDefault();scrollTo('blog');}}>Blog</a></li>
+            <li><a href="#contact" onClick={(e)=>{e.preventDefault();scrollTo('contact');}}>Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div className="footer__col-title">Products</div>
+          <ul className="footer__links">
+            <li><a href="#products">Cables &amp; Wires</a></li>
+            <li><a href="#products">Cable Management</a></li>
+            <li><a href="#products">Electrical Products</a></li>
+            <li><a href="#products">Metal Products</a></li>
+            <li><a href="#products">Industrial Supply</a></li>
+          </ul>
+        </div>
+        <div>
+          <div className="footer__col-title">Legal</div>
+          <ul className="footer__links">
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms &amp; Conditions</a></li>
+            <li><a href={`mailto:${c.email}`}>Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div className="footer__bottom">
+        <p className="footer__copy">© {new Date().getFullYear()} <strong>CoreX Enterprises</strong>. All rights reserved.</p>
+        <div className="footer__email"><a href={`mailto:${c.email}`}>{c.email}</a></div>
+      </div>
+    </footer>
+  );
+}
